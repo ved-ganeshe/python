@@ -1,0 +1,11 @@
+games = ["roblox", "fortnite", "among us", "minecraft", "fall guys", "Grand Theft Auto", "Tetris", "video" ]
+games.append("pac-man")
+print(games[0])
+print(games[1])
+print(games[2])
+print(games[3])
+print(games[4])
+print(games[5])
+print(games[6])
+games.remove("video")
+print(games)
