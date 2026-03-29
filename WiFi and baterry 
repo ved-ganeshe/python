@@ -1,0 +1,8 @@
+battery = int(input('what percentage is your baterry?'))
+wifi = input('is your wifi on or off')
+if battery < 20 and wifi == 'on':
+    print ('turn off wifi to save battery')
+elif battery >=20 and wifi == 'on':
+    print ('you can keep browsing')
+else:
+    print('charge the device')
