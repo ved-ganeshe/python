@@ -1,0 +1,21 @@
+import turtle
+import time
+screen = turtle.Screen()
+screen.setup(width=600, height = 400)
+screen.tracer(0)
+screen.bgcolor('black')
+
+paddle = turtle.Turtle()
+paddle.shape('square')
+paddle.color("white")
+paddle.penup()
+paddle.speed(0)
+paddle.goto(0, 180)
+paddle_width = 120
+ball = turtle.Turtle()
+ball.shape('circle')
+ball.color('red')
+ball.penup()
+ball.speed(0)
+ball.goto(0, 0)
+ball.dx = 2 ball.dy = -2
