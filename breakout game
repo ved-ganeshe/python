@@ -19,3 +19,19 @@ ball.penup()
 ball.speed(0)
 ball.goto(0, 0)
 ball.dx = 2 ball.dy = -2
+bricks = []
+colors = ['red', 'orange', 'yellow', 'lime', 'green', 'skyblue', 'blue']
+for row in range (7):
+    for col in range(-250, 300, 80):
+        brick = turtle.Turtle()
+        brick.shape("square")
+        brick.color(colors[row]) # different colors for each row
+        brick.pu()
+        brick.speed(0)
+        brick.goto(col, 150 - (row * 30))
+        bricks.append(brick)
+score = 0
+score_display = turtle.Turtle()
+score_display.write('Score:{}'.format(score), align='center',font=("Ubuntu",16, 'normal'))
+
+turtle.done
