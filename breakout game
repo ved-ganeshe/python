@@ -18,7 +18,8 @@ ball.color('red')
 ball.penup()
 ball.speed(0)
 ball.goto(0, 0)
-ball.dx = 2 ball.dy = -2
+ball.dx = 2 
+ball.dy = -2
 bricks = []
 colors = ['red', 'orange', 'yellow', 'lime', 'green', 'skyblue', 'blue']
 for row in range (7):
@@ -33,5 +34,34 @@ for row in range (7):
 score = 0
 score_display = turtle.Turtle()
 score_display.write('Score:{}'.format(score), align='center',font=("Ubuntu",16, 'normal'))
+def paddle_left():
+    x = paddle.xcor()
+    if x - paddle_width // 2 > -450:
+        #prevents going off screen
+        paddle.setx(x - 40)
+def paddle_right():
+    x = paddle.xcor()
+    if x + paddle_width // 2 < 450:
+        #prevents going off-scren
+        paddle.setx(x + 40)
+screen.listen()
+screen.onkey(paddle_left, 'Left')
+screen.onkey(paddle_right, 'Right')
+#game start flag
+game_started = False
+def start_game(x,y):
+    global game_started
+    game_started = True
+screen.onclick(start_game)
+def game_loop():
+    global game_start
+    screen.update
+    if game_started:
+        ball.setx(ball.xcor() + ball.dx)
+        ball.sety(ball.ycor() + ball.dy)
+        if ball.xcor() > 290 or ball.xcor() < -290:
+            ball.dx *= -1
+            if ball.ycor() > 190:
+                ball.dy * -1
 
 turtle.done
